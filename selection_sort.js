@@ -16,9 +16,6 @@ const delaySec = 1600;
 
 const selectionSort = () => {
     const p = document.querySelectorAll("p");
-    let tempi, tempmind;
-    console.log(p);
-    console.log(Number(p[0].innerText));
     for (let i = 0; i < nNumb; i++) {
         (function(ii) {
             setTimeout(() => {
@@ -47,4 +44,7 @@ const selectionSort = () => {
 };
 
 init();
-startbtn.addEventListener("click", selectionSort);
+startbtn.addEventListener("click", () => {
+    startbtn.style.display = "none";
+    selectionSort();
+});
