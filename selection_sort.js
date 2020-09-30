@@ -29,8 +29,10 @@ const selectionSort = () => {
                 }
                 p[i].style.backgroundColor = "#f6ad55";
                 p[i].classList.toggle("selected");
-                p[minIndex].style.backgroundColor = "#f6ad55";
-                p[minIndex].classList.toggle("selected");
+                if (i !== minIndex) {
+                    p[minIndex].style.backgroundColor = "#f6ad55";
+                    p[minIndex].classList.toggle("selected");
+                }
                 setTimeout(() => {
                     let temp = Number(p[i].innerText);
                     p[i].innerText = Number(p[minIndex].innerText);
@@ -38,8 +40,10 @@ const selectionSort = () => {
                     setTimeout(() => {
                         p[i].style.backgroundColor = "#feebc8";
                         p[i].classList.toggle("selected");
-                        p[minIndex].style.backgroundColor = "white";
-                        p[minIndex].classList.toggle("selected");
+                        if (i !== minIndex) {
+                            p[minIndex].style.backgroundColor = "white";
+                            p[minIndex].classList.toggle("selected");
+                        }
                     }, 700);
                 }, 700);
             }, ii * delaySec);
