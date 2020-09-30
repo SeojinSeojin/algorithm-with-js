@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>선택 정렬</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         * {
             margin: 0;
@@ -13,7 +14,7 @@
         p {
             display: inline-block;
             width: 2rem;
-            margin: 0;
+            margin: 0.1rem;
             margin-right: 1rem;
             padding: 0.2rem;
             border-radius: 0.2rem;
@@ -51,6 +52,12 @@
             width: 90%;
             background-color: white;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .selected {
+            display: inline-block;
+            animation: rubberBand;
+            animation-duration: 0.5s;
         }
     </style>
 </head>
