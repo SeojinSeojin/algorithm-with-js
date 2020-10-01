@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택 정렬</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        p {
+            display: inline-block;
+            width: 2rem;
+            margin: 0.1rem;
+            margin-right: 1rem;
+            padding: 0.2rem;
+            border-radius: 0.2rem;
+            transition: 0.3s;
+        }
+        
+        a {
+            position: fixed;
+            bottom: 10rem;
+            right: 1rem;
+            border-radius: 0.6rem;
+            padding: 0.3rem;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        
+        a:hover {
+            background-color: rgb(255, 189, 66);
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .container {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: #e2e8f0;
+            height: 100vh;
+        }
+        
+        #numbers {
+            padding: 0.2rem;
+            margin-top: 2rem;
+            width: 90%;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .selected {
+            animation: headShake;
+            animation-duration: 0.25s;
+        }
+        
+        .compare {
+            background-color: #faf089;
+        }
+        
+        .fin {
+            background-color: #ed8936;
+            animation: heartBeat;
+            animation-duration: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="numbers"></div>
+        <a id="startbtn">let's sort them</a>
+        <script src="bubble_sort.js"></script>
+    </div>
+</body>
+
+</html>
