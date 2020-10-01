@@ -22,6 +22,7 @@ const bubbleSort = () => {
                 for (let j = 0; j < nNumb - i - 1; j++) {
                     (function(jj) {
                         setTimeout(() => {
+                            console.log(`i : ${i} j : ${j}`);
                             p[j].classList.toggle("compare");
                             p[j + 1].classList.toggle("compare");
                             setTimeout(() => {
@@ -48,7 +49,7 @@ const bubbleSort = () => {
                         }, jj * 300);
                     })(j);
                 }
-            }, ii * delaySec * (nNumb - ii / 2));
+            }, 330 * (ii * (nNumb - 2) - (ii * (ii - 1)) / 2));
         })(i);
     }
 };
