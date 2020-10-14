@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            margin: 0;
+            font-size: 22px;
+        }
+        
+        body {
+            min-width: 750px;
+        }
+        
+        p {
+            display: inline-block;
+            width: 1.5rem;
+            margin: 0.1rem;
+            padding: 0.2rem;
+            border-radius: 0.2rem;
+            transition: 0.3s;
+            text-align: center;
+            background-color: rgb(175, 220, 255);
+            border-radius: 1rem;
+        }
+        
+        a {
+            position: fixed;
+            bottom: 10rem;
+            right: 1rem;
+            border-radius: 0.6rem;
+            padding: 0.3rem;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        
+        a:hover {
+            background-color: rgb(255, 189, 66);
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .container {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: #e2e8f0;
+            height: 100vh;
+        }
+        
+        #numbers {
+            padding: 0.2rem;
+            margin-top: 2rem;
+            width: 90%;
+            height: 80vh;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .swap {
+            animation: rubberBand;
+            animation-duration: 1s;
+        }
+        
+        .pivot {
+            background-color: #b3ff6c!important
+        }
+        
+        .selected {
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="numbers"></div>
+        <a id="startbtn">let's sort them</a>
+        <script src="quick_sort.js"></script>
+    </div>
+</body>
+
+</html>
