@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Battle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        html {
+            height: 100vh;
+        }
+        
+        body {
+            min-width: 800px;
+            background: linear-gradient( rgb(228, 228, 255), rgb(190, 190, 255));
+            background-repeat: no-repeat;
+            font-family: 'Nanum Pen Script', cursive;
+        }
+        
+        img {
+            height: 5.3rem;
+            width: auto;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+        
+        img:active {
+            box-shadow: inset 5px 5px 10px 2rem rgba(70, 110, 240, 0.2);
+        }
+        
+        .onbattle {
+            display: inline-block;
+            height: 5.3rem;
+            width: 5.3rem;
+            border: 1px solid black;
+            border-radius: 2rem;
+            box-shadow: inset 0rem .5rem .8rem rgba(32, 51, 156, 0.25), inset 0rem -0.5rem .8rem rgba(255, 255, 255, 0.5);
+        }
+        
+        #button {
+            text-align: center;
+            height: 4rem;
+            cursor: pointer;
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            font-size: 3rem;
+        }
+        
+        #winner {
+            display: none;
+            position: absolute;
+            width: 28rem;
+            height: 28rem;
+            top: 50%;
+            left: 50%;
+            margin: -14rem 0 0 -14rem;
+            border-radius: 2rem;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: .5s;
+        }
+        
+        #winner img {
+            width: 100%;
+            height: 100%;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body onselectstart="return false">
+    <div style="display: flex; justify-content:center; margin-bottom:2rem">
+        <img src="./img/pokemon.png" alt="" style="height:6rem;">
+    </div>
+    <div style="display: flex; justify-content:space-around">
+        <div class="onbattle" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="onbattle" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="onbattle" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="onbattle" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="onbattle" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="onbattle" id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="onbattle" id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="onbattle" id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="button">Go!</div>
+    <img src="./img/achamo.webp" id="achamo" draggable="true" ondragstart="drag(event)">
+    <img src="./img/bcane.webp" id="bcane" draggable="true" ondragstart="drag(event)">
+    <img src="./img/cikorita.webp" id="cikorita" draggable="true" ondragstart="drag(event)">
+    <img src="./img/coil.webp" id="coil" draggable="true" ondragstart="drag(event)">
+    <img src="./img/digda.webp" id="digda" draggable="true" ondragstart="drag(event)">
+    <img src="./img/ereve.webp" id="ereve" draggable="true" ondragstart="drag(event)">
+    <img src="./img/ggobugi.webp" id="ggobugi" draggable="true" ondragstart="drag(event)">
+    <img src="./img/ggomadol.webp" id="ggomadol" draggable="true" ondragstart="drag(event)">
+    <img src="./img/liako.webp" id="liako" draggable="true" ondragstart="drag(event)">
+    <img src="./img/longstone.webp" id="longstone" draggable="true" ondragstart="drag(event)">
+    <img src="./img/mulzzangi.webp" id="mulzzangi" draggable="true" ondragstart="drag(event)">
+    <img src="./img/namujigi.webp" id="namujigi" draggable="true" ondragstart="drag(event)">
+    <img src="./img/pairi.webp" id="pairi" draggable="true" ondragstart="drag(event)">
+    <img src="./img/pikachu.webp" id="pikachu" draggable="true" ondragstart="drag(event)">
+    <img src="./img/strangeC.webp" id="strangeC" draggable="true" ondragstart="drag(event)">
+    <img src="./img/zziririgong.webp" id="zziririgong" draggable="true" ondragstart="drag(event)">
+    <div id="winner"></div>
+    <script src="./dc_pokemon.js"></script>
+</body>
+
+</html>
