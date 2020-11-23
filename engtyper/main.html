@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng Race</title>
+</head>
+<style>
+    * {
+        font-size: 25px;
+    }
+    
+    #title {
+        --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+    
+    .contents {
+        height: 10rem;
+        border: rgb(104, 60, 35) .2rem solid;
+        margin: 1px;
+    }
+    
+    input[type="text"] {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+</style>
+
+<body style="background:url(./bg.png); display:flex; flex-direction:column; align-items:center; height:100vh;">
+    <div id="title" style="text-align: center; width:10rem; margin:2rem; padding:.2rem; background-color:rgb(219, 196, 154); border:.3rem solid rgb(104, 60, 35); color:rgb(59, 22, 0)">
+        짧 은 글 연 습
+    </div>
+    <div style="display: grid; grid-template-columns:8rem auto 8rem; width:100%">
+        <div class="contents" style="background-color: beige;">
+            <span>이름</span><input type="text" name="name " id="nameInput" style="width:5rem; ">
+            <input type="radio" name="gender" id="boy ">남
+            <input type="radio" name="gender" id="girl ">여
+        </div>
+        <div class="contents " style="background-color: rgb(10, 65, 10); "></div>
+        <div class="contents " style="background-color: beige; ">
+            <img src="boy.png " alt="picture " style="width:100%; height:auto; border-radius:7px ">
+            <div style="text-align: center; " id="nameOutput">홍길동</div>
+        </div>
+    </div>
+
+    <script>
+        const nameInput = document.querySelector("nameInput");
+        const nameOutput = document.querySelector("nameOutput")
+        nameInput.addEventListener("onkeydown", (event) => {
+
+        })
+    </script>
+</body>
+
+</html>
