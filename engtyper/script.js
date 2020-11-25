@@ -144,24 +144,36 @@ answerInput.addEventListener("keydown", (e) => {
 })
 
 function lcs(x, y) {
+    x = "0" + x;
+    y = "1" + y;
     const m = x.length,
         n = y.length;
+    console.log(x, y)
     let c = new Array(m);
     for (let i = 0; i < m; i++) {
         c[i] = new Array(n);
     }
+    console.log(c)
+    console.log(c[10])
     for (let j = 0; j < m; j++) {
         c[j][0] = 0;
-        c[0][j] = 0;
+    }
+    for (let w = 0; w < n; w++) {
+        c[0][w] = 0;
     }
     for (let k = 1; k < m; k++) {
         for (let l = 1; l < n; l++) {
-            if (x[k] === x[l]) {
+            if (x[k] === y[l]) {
                 c[k][l] = c[k - 1][l - 1] + 1
             } else {
                 c[k][l] = Math.max(c[k - 1][l], c[k][l - 1])
             }
         }
     }
-    return ((c[m - 1][n - 1] / m) * 100).toFixed(3)
+    return ((c[m - 1][n - 1] / (m - 1)) * 100).toFixed(1)
 }
+
+const s1 = "Since a politician never believes what he says, he is surprised when others believe him. - Charles de Gaulle"
+const s2 = "Sincae apolitician never believs what he says, he is surpirised when others beilece him.- Charles de Grula"
+
+console.log(lcs(s1, s2))
