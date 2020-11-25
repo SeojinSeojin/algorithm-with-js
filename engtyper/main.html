@@ -14,45 +14,122 @@
     #title {
         --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        text-align: center;
+        width: 10rem;
+        margin: 2rem;
+        padding: .2rem;
+        background: linear-gradient(rgb(219, 196, 154), rgb(202, 168, 122));
+        border: .3rem solid rgb(104, 60, 35);
+        color: rgb(59, 22, 0)
     }
     
     .contents {
-        height: 10rem;
+        height: 10.2rem;
         border: rgb(104, 60, 35) .2rem solid;
         margin: 1px;
+        background: linear-gradient(rgb(219, 196, 154), rgb(206, 174, 130));
     }
     
-    input[type="text"] {
+    #resultDiv {
+        background: none;
+        background-color: rgb(10, 65, 10);
+        overflow-y: scroll;
+    }
+    
+    #nameInput {
         background-color: transparent;
         border: none;
         border-bottom: 1px solid black;
     }
+    
+    #answer {
+        padding: .5rem;
+        border-bottom: 1px solid rgb(104, 60, 35);
+        font-size: smaller;
+    }
+    
+    #answerInput {
+        width: 97%;
+        height: 2rem;
+        font-size: smaller;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgb(138, 17, 17);
+        margin: 2px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    #answerInput:hover,
+    #answerInput:active {
+        border-bottom: 2px solid rgb(182, 73, 10);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result-div {
+        color: white;
+    }
+    
+    footer {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        color: white;
+    }
+    
+    footer div {
+        font-size: small;
+    }
 </style>
 
-<body style="background:url(./bg.png); display:flex; flex-direction:column; align-items:center; height:100vh;">
-    <div id="title" style="text-align: center; width:10rem; margin:2rem; padding:.2rem; background-color:rgb(219, 196, 154); border:.3rem solid rgb(104, 60, 35); color:rgb(59, 22, 0)">
-        짧 은 글 연 습
-    </div>
+<body style="margin:0; background:url(./bg.png); display:flex; flex-direction:column; align-items:center; height:100vh;">
+    <div id="title">짧 은 글 연 습</div>
     <div style="display: grid; grid-template-columns:8rem auto 8rem; width:100%">
-        <div class="contents" style="background-color: beige;">
-            <span>이름</span><input type="text" name="name " id="nameInput" style="width:5rem; ">
-            <input type="radio" name="gender" id="boy ">남
-            <input type="radio" name="gender" id="girl ">여
+        <div class="contents" style="background-color: rgb(219, 196, 154);">
+            <div style="color: rgb(59, 22, 0); text-align:center;margin-bottom:1rem">정보 입력</div>
+            <span>이름</span><input type="text" name="name" id="nameInput" style="width:5rem; ">
+            <input type="radio" name="gender" id="boy">남
+            <input type="radio" name="gender" id="girl">여
         </div>
-        <div class="contents " style="background-color: rgb(10, 65, 10); "></div>
-        <div class="contents " style="background-color: beige; ">
-            <img src="boy.png " alt="picture " style="width:100%; height:auto; border-radius:7px ">
-            <div style="text-align: center; " id="nameOutput">홍길동</div>
+        <div class="contents" id="resultDiv"></div>
+        <div class="contents" style="background-color: rgb(219, 196, 154); ">
+            <img src="boy.png" alt="picture" style="width:100%; height:auto; border-radius:7px ">
+            <div style="text-align: center; " id="nameOutput"></div>
         </div>
     </div>
 
-    <script>
-        const nameInput = document.querySelector("nameInput");
-        const nameOutput = document.querySelector("nameOutput")
-        nameInput.addEventListener("onkeydown", (event) => {
+    <div style="height: 30vh; width:98%; border:.3rem rgb(117, 63, 31) solid; background:linear-gradient(beige,rgb(233, 225, 204))">
+        <div id="answer"></div>
+        <input type="text" id="answerInput" placeholder="press any key to start">
+        <div id="clock"></div>
+        <div id="score"></div>
+    </div>
 
+    <footer>
+        <div>Eng Race - SKKU COMEDU ALGORITHM 7조 Dynamic Programming 과제</div>
+        <div>Site Built By 2019312552 김서진</div>
+    </footer>
+    <script>
+        const nameInput = document.querySelector("#nameInput");
+        const nameOutput = document.querySelector("#nameOutput")
+        nameInput.addEventListener("keydown", (event) => {
+            const value = nameInput.value
+            nameOutput.innerText = value
+        })
+        const profImge = document.querySelector("img");
+        const BoyInput = document.querySelector("#boy");
+        const GirInput = document.querySelector("#girl");
+        BoyInput.addEventListener("click", (event) => {
+            profImge.src = "./boy.png";
+        })
+        GirInput.addEventListener("click", (event) => {
+            profImge.src = "./girl.png";
+        })
+        window.addEventListener("DOMContentLoaded", () => {
+            nameInput.value = ""
         })
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
