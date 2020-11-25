@@ -106,7 +106,6 @@ window.addEventListener("DOMContentLoaded", () => {
 })
 
 const startClock = () => {
-    console.log("clock started")
     const StartTime = new Date().getTime()
     const TimerProcess = setInterval(() => {
         const PresentTime = new Date().getTime();
@@ -135,10 +134,7 @@ const startClock = () => {
 }
 
 answerInput.addEventListener("keydown", (e) => {
-    if (clockDiv.innerText !== "") {
-        console.log("Game is already running")
-    } else {
-        console.log("keydown event");
+    if (clockDiv.innerText !== "") {} else {
         startClock();
     }
 })
@@ -148,13 +144,10 @@ function lcs(x, y) {
     y = "1" + y;
     const m = x.length,
         n = y.length;
-    console.log(x, y)
     let c = new Array(m);
     for (let i = 0; i < m; i++) {
         c[i] = new Array(n);
     }
-    console.log(c)
-    console.log(c[10])
     for (let j = 0; j < m; j++) {
         c[j][0] = 0;
     }
@@ -172,6 +165,8 @@ function lcs(x, y) {
     }
     return ((c[m - 1][n - 1] / (m - 1)) * 100).toFixed(1)
 }
+
+// 여기서 함수 디버깅을 하세요!
 
 const s1 = "Since a politician never believes what he says, he is surprised when others believe him. - Charles de Gaulle"
 const s2 = "Sincae apolitician never believs what he says, he is surpirised when others beilece him.- Charles de Grula"
